@@ -1,9 +1,10 @@
-package timeUtils;
-
 public class TimeUtils {
 
     public static int timeToSec(String time) {
         String[] part = time.split(":");
+        if (part.length != 3) {
+            return -1;
+        }
         int hh = Integer.parseInt(part[0]);
         int mm = Integer.parseInt(part[1]);
         int ss = Integer.parseInt(part[2]);
